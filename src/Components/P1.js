@@ -13,6 +13,7 @@ class P1 extends Component {
     this.state = {
       toP2: false,
       isSelected: false,
+      isSelectedQ: [false, false, false, false],
       questionsHover: [true, false, false, false],
       actualHover: 0
     };
@@ -22,28 +23,33 @@ class P1 extends Component {
   }
   rightFunction(event) {
     if (event.keyCode === 39) {
-      console.log("Imherefirst", this.state.isSelected);
+      console.log("Right arrow", this.state.isSelected);
       if (this.state.isSelected === true) {
-        console.log("Imhere");
+        console.log("Right arrow plus selected");
         this.setState(() => ({
           toP2: true
         }));
       }
+      let updIsSelectedQ = this.state.isSelectedQ;
+      updIsSelectedQ[this.state.actualHover] = true;
       this.setState(() => ({
-        isSelected: true
+        isSelected: true,
+        isSelectedQ: updIsSelectedQ
       }));
     }
   }
 
   downFunction(event) {
     if (event.keyCode === 40) {
-      if (this.state.actualHover < 3) {       
+      if (this.state.actualHover < 3) {
         this.setState(() => ({
           actualHover: this.state.actualHover + 1,
+          isSelected: false,
+          isSelectedQ: [false, false, false, false]
         }));
         console.log("Actual", this.state.actualHover);
         let updQuestionsHover = this.state.questionsHover;
-        updQuestionsHover[this.state.actualHover -1] = false;
+        updQuestionsHover[this.state.actualHover - 1] = false;
         updQuestionsHover[this.state.actualHover] = true;
         console.log("updQuestionsHover", updQuestionsHover);
         this.setState(() => ({
@@ -55,13 +61,15 @@ class P1 extends Component {
 
   upFunction(event) {
     if (event.keyCode === 38) {
-      if (this.state.actualHover > 0) {       
+      if (this.state.actualHover > 0) {
         this.setState(() => ({
           actualHover: this.state.actualHover - 1,
+          isSelected: false,
+          isSelectedQ: [false, false, false, false]
         }));
         console.log("Actual", this.state.actualHover);
         let updQuestionsHover = this.state.questionsHover;
-        updQuestionsHover[this.state.actualHover  + 1] = false;
+        updQuestionsHover[this.state.actualHover + 1] = false;
         updQuestionsHover[this.state.actualHover] = true;
         console.log("updQuestionsHover", updQuestionsHover);
         this.setState(() => ({
@@ -83,7 +91,7 @@ class P1 extends Component {
   }
   render() {
     if (this.state.toP2 === true) {
-      return <Redirect to="/P2" />;
+      return <Redirect to={"/P2/" + this.state.actualHover} />;
     }
     return (
       <div className="P1">
@@ -99,7 +107,10 @@ class P1 extends Component {
                   : "P1-question"
               }
             >
-              <img src={square} alt="" />
+              <img
+                src={this.state.isSelectedQ[0] ? squareFull : square}
+                alt=""
+              />
               <label className="P1-label">Femenino</label>
             </div>
 
@@ -110,7 +121,10 @@ class P1 extends Component {
                   : "P1-question"
               }
             >
-              <img src={square} alt="" />
+              <img
+                src={this.state.isSelectedQ[1] ? squareFull : square}
+                alt=""
+              />
               <label className="P1-label">Másculino</label>
             </div>
 
@@ -121,7 +135,10 @@ class P1 extends Component {
                   : "P1-question"
               }
             >
-              <img src={square} alt="" />
+              <img
+                src={this.state.isSelectedQ[2] ? squareFull : square}
+                alt=""
+              />
               <label className="P1-label">Mujer Trans</label>
             </div>
 
@@ -132,7 +149,10 @@ class P1 extends Component {
                   : "P1-question"
               }
             >
-              <img src={square} alt="" />
+              <img
+                src={this.state.isSelectedQ[3] ? squareFull : square}
+                alt=""
+              />
               <label className="P1-label">Hombre Trans</label>
             </div>
           </div>
