@@ -1,15 +1,22 @@
 import React, { Component } from "react";
 import "./Inicio.css";
 import continuar from "../assets/gif1.gif";
+import { Redirect } from "react-router";
+
 
 class Inicio extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      toGracias: false
+    };
     this.rightFunction = this.rightFunction.bind(this);
   }
   rightFunction(event) {
     if (event.keyCode === 39) {
-     
+      this.setState(() => ({
+        toGracias: true
+      }));
     }
   }
   componentDidMount() {
@@ -19,6 +26,9 @@ class Inicio extends Component {
     document.removeEventListener("keydown", this.rightFunction, false);
   }
   render() {
+    if (this.state.toGracias === true) {
+      return <Redirect to="/Gracias" />;
+    }
     return (
       <div className="Inicio">
         <p>Ayúdanos a </p>

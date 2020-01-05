@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import Inicio from "./Inicio";
+import Gracias from "./Gracias";
 
 class Main extends Component {
   render() {
@@ -9,6 +10,7 @@ class Main extends Component {
         <Switch>
           <Route exact path="/" component={Inicio} />
           <Route exact path="/Inicio" component={Inicio} />
+          <Route exact path="/Gracias" component={Gracias} />
         </Switch>
 
       </div>
@@ -16,4 +18,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withRouter(Main);
