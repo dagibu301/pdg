@@ -16,7 +16,7 @@ class P42 extends Component{
           P1: this.props.location.pathname.slice(5, 6),
           P2: this.props.location.pathname.slice(7,8),
           P3: this.props.location.pathname.slice(9,10),
-          toP42: false,
+          toFinal: false,
           isSelected: false,
           isSelectedQ: [false, false, false, false],
           questionsHover: [true, false, false, false],
@@ -38,9 +38,9 @@ class P42 extends Component{
           if (this.state.isSelected === true) {
             console.log("Right arrow plus selected");
             console.log(this.props.location.pathname.slice(4));
-            console.log("this.state.toP42", this.state.toP42);
+            console.log("this.state.toFinal", this.state.toFinal);
             this.setState(() => ({
-                toP42: true
+              toFinal: true
               }));
           }
           let updIsSelectedQ = this.state.isSelectedQ;
@@ -104,14 +104,16 @@ class P42 extends Component{
       }
       render() {
         /* console.log(this.props.location.pathname.slice(4)) */
-        if (this.state.toP42 === true) {
+        if (this.state.toFinal === true) {
           return (
             <Redirect
               to={
-                "/P42/" +
+                "/Final/" +
                 this.state.P1 +
                 "," +
                 this.state.P2 +
+                "," +
+                this.state.P3 +
                 "," +
                 this.state.actualHover
               }
