@@ -14,7 +14,8 @@ class P42 extends Component{
         super(props);
         this.state = {
           P1: this.props.location.pathname.slice(5, 6),
-          P2: this.props.location.pathname.slice(7),
+          P2: this.props.location.pathname.slice(7,8),
+          P3: this.props.location.pathname.slice(9,10),
           toP42: false,
           isSelected: false,
           isSelectedQ: [false, false, false, false],
@@ -24,6 +25,9 @@ class P42 extends Component{
         this.rightFunction = this.rightFunction.bind(this);
         this.downFunction = this.downFunction.bind(this);
         this.upFunction = this.upFunction.bind(this);
+        console.log("this.state.P1: ", this.state.P1);
+        console.log("this.state.P2: ", this.state.P2);
+        console.log("this.state.P3: ", this.state.P3);
       }
     
       rightFunction(event) {
@@ -50,7 +54,7 @@ class P42 extends Component{
     
       downFunction(event) {
         if (event.keyCode === 40) {
-          if (this.state.actualHover < 4) {
+          if (this.state.actualHover < 3) {
             this.setState(() => ({
               actualHover: this.state.actualHover + 1,
               isSelected: false,

@@ -9,6 +9,7 @@ import P32 from "./P32";
 import P41 from "./P41";
 import P411 from "./P411";
 import P42 from "./P42";
+import Final from "./Final";
 
 class Main extends Component {
   render() {
@@ -25,6 +26,7 @@ class Main extends Component {
           <Route  path="/P41" component={P41} />
           <Route  path="/P411" component={P411} />
           <Route  path="/P42" component={P42} />
+          <Route  path="/Final" component={Final} />
         </Switch>
 
       </div>
