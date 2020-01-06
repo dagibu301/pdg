@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./P41.css";
+import "./P43.css";
 import continuar from "../assets/gif0.gif";
 import seleccionar from "../assets/Seleccionar.png";
 import square from "../assets/square.PNG";
@@ -9,7 +9,7 @@ import { Redirect } from "react-router";
 import UIfx from "uifx";
 import mp3File from "../assets/beep.wav";
 
-class P41 extends Component{
+class P43 extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -54,7 +54,7 @@ class P41 extends Component{
     
       downFunction(event) {
         if (event.keyCode === 40) {
-          if (this.state.actualHover < 2) {
+          if (this.state.actualHover < 1) {
             this.setState(() => ({
               actualHover: this.state.actualHover + 1,
               isSelected: false,
@@ -121,72 +121,61 @@ class P41 extends Component{
           );
         }
         return (
-          <div className="P41">
-            <div className="P41-text">
-              <img src={step4} alt="Paso 2" className="P41-step" />
-              <h1 className="P41-h1">
+          <div className="P43">
+            <div className="P43-text">
+              <img src={step4} alt="Paso 2" className="P43-step" />
+              <h1 className="P43-h1">
+              ¿Has visto que
                 {" "}
-                <label className="P41-bigger">
-                ¿En qué lugares es más común que 
+                <label className="P43-bigger">
+                a alguien más 
                 </label>{" "}
-                te silben, te tiren besos, te digan piropos, te persigan o te bloqueen el paso?
+                le silben, le tiren besos, le digan piropos, le persigan o le bloqueen el paso, mientras transita por el espacio público?
 
               </h1>
     
-              <div className="P41-questions-container">
+              <div className="P43-questions-container">
                 <div
                   className={
                     this.state.questionsHover[0]
-                      ? "P41-question-hover"
-                      : "P41-question"
+                      ? "P43-question-hover"
+                      : "P43-question"
                   }
                 >
                   <img
                     src={this.state.isSelectedQ[0] ? squareFull : square}
                     alt=""
                   />
-                  <label className="P41-label">Transporte público, buses, MIO</label>
+                  <label className="P43-label">Si, me ha tocado verlo</label>
                 </div>
     
                 <div
                   className={
                     this.state.questionsHover[1]
-                      ? "P41-question-hover"
-                      : "P41-question"
+                      ? "P43-question-hover"
+                      : "P43-question"
                   }
                 >
                   <img
                     src={this.state.isSelectedQ[1] ? squareFull : square}
                     alt=""
                   />
-                  <label className="P41-label">Centros comerciales, universidad, bares, discotecas</label>
+                  <label className="P43-label">No, nunca he visto algo así mientras voy por la calle</label>
                 </div>
     
-                <div
-                  className={
-                    this.state.questionsHover[2]
-                      ? "P41-question-hover"
-                      : "P41-question"
-                  }
-                >
-                  <img
-                    src={this.state.isSelectedQ[2] ? squareFull : square}
-                    alt=""
-                  />
-                  <label className="P41-label">Calle o acera, ciclovías, parques</label>
-                </div>
+  
     
               </div>
             </div>
     
             {this.state.isSelected ? (
-              <img src={continuar} alt="continuar..." className="P41-img" />
+              <img src={continuar} alt="continuar..." className="P43-img" />
             ) : (
-              <img src={seleccionar} alt="continuar..." className="P41-img" />
+              <img src={seleccionar} alt="continuar..." className="P43-img" />
             )}
           </div>
         );
       }
 }
 
-export default P41;
+export default P43;
