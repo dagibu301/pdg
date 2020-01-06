@@ -6,6 +6,8 @@ import square from "../assets/square.PNG";
 import squareFull from "../assets/square-full.png";
 import step1 from "../assets/step1.PNG";
 import { Redirect } from "react-router";
+import UIfx from "uifx";
+import mp3File from '../assets/beep.wav';
 
 class P1 extends Component {
   constructor(props) {
@@ -23,6 +25,8 @@ class P1 extends Component {
   }
   rightFunction(event) {
     if (event.keyCode === 39) {
+      const beep = new UIfx(mp3File);
+      beep.play();
       console.log("Right arrow", this.state.isSelected);
       if (this.state.isSelected === true) {
         console.log("Right arrow plus selected");

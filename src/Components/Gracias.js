@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Gracias.css";
 import continuar from "../assets/gif0.gif";
 import { Redirect } from "react-router";
+import UIfx from "uifx";
+import mp3File from '../assets/beep.wav';
 
 class Gracias extends Component {
     constructor(props) {
@@ -13,6 +15,8 @@ class Gracias extends Component {
       }
       rightFunction(event) {
         if (event.keyCode === 39) {
+          const beep = new UIfx(mp3File);
+          beep.play();
           this.setState(() => ({
             toP1: true
           }));

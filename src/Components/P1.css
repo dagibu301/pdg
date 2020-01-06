@@ -18,13 +18,13 @@
 }
 .P1-h1 {
   font-family: Roboto-Bold;
-  font-size: 2.5rem;
+  font-size: 4.5rem;
   color: #8473ff;
   margin-bottom: 1rem;
 }
 
 .P1-text {
-  padding-right: 50vw;
+  padding-right: 30vw;
 }
 
 .P1-img {
@@ -38,12 +38,12 @@
 }
 .P1-question{
   display: flex;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   padding: 0.5rem;
 }
 .P1-question-hover{
   display: flex;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   border: solid 0.2rem #8473ff;
   padding: 0.5rem;
 }

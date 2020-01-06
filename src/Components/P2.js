@@ -6,6 +6,8 @@ import square from "../assets/square.PNG";
 import squareFull from "../assets/square-full.png";
 import step2 from "../assets/step2.png";
 import { Redirect } from "react-router";
+import UIfx from "uifx";
+import mp3File from '../assets/beep.wav';
 
 class P2 extends Component {
   constructor(props) {
@@ -26,21 +28,23 @@ class P2 extends Component {
 
   rightFunction(event) {
     if (event.keyCode === 39) {
+      const beep = new UIfx(mp3File);
+      beep.play();
       console.log("Right arrow", this.state.isSelected);
       if (this.state.isSelected === true) {
         console.log("Right arrow plus selected");
         console.log(this.props.location.pathname.slice(4))
         console.log("this.state.toP31",this.state.toP31);
         if (
-          this.state.P1 == 0 ||
-          this.state.P1 == 2
+          this.state.P1 === '0' ||
+          this.state.P1 === '2'
         ) {
           this.setState(() => ({
             toP31: true
           }));
         } else if (
-          this.state.P1 == 1 ||
-          this.state.P1 == 3
+          this.state.P1 === '1' ||
+          this.state.P1 === '3'
         ) {
           this.setState(() => ({
             toP32: true
@@ -136,7 +140,7 @@ class P2 extends Component {
       <div className="P2">
         <div className="P2-text">
           <img src={step2} alt="Paso 2" className="P2-step" />
-          <h1 className="P1-h1">¿Qué edad tienes?</h1>
+          <h1 className="P2-h1">¿Qué edad tienes?</h1>
 
           <div className="P2-questions-container">
             <div

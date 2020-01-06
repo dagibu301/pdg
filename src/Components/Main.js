@@ -6,6 +6,8 @@ import P1 from "./P1";
 import P2 from "./P2";
 import P31 from "./P31";
 import P32 from "./P32";
+import P41 from "./P41";
+import P411 from "./P411";
 
 class Main extends Component {
   render() {
@@ -19,6 +21,8 @@ class Main extends Component {
           <Route  path="/P2" component={P2} />
           <Route  path="/P31" component={P31} />
           <Route  path="/P32" component={P32} />
+          <Route  path="/P41" component={P41} />
+          <Route  path="/P411" component={P411} />
         </Switch>
 
       </div>
