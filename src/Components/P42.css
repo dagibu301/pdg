@@ -8,50 +8,50 @@
     src: url("../assets/Roboto-Bold.ttf"); /*URL to font*/
   }
   
-  .P32 {
+  .P42 {
     padding: 2rem 1rem 1rem 3rem;
     font-family: Roboto-Regular;
   }
   
-  .P32-step{
+  .P42-step{
     width: 80vw;
   }
-  .P32-h1 {
+  .P42-h1 {
     font-size: 2.5rem;
     color: #8473ff;
     margin-bottom: 1rem;
   }
 
-.P32-bigger{
+.P42-bigger{
     font-size: 4.5rem;
 }
 
 
-  .P32-text {
+  .P42-text {
     padding-right: 5vw;
   }
   
-  .P32-img {
+  .P42-img {
     position: absolute;
     bottom: 4rem;
     right: 2rem;
   }
   
-  .P32-questions-container{
+  .P42-questions-container{
     margin: 2rem 22vw 0px 2.5rem;
   }
-  .P32-question{
+  .P42-question{
     display: flex;
     margin-top: .5rem;
     padding: 0.5rem;
   }
-  .P32-question-hover{
+  .P42-question-hover{
     display: flex;
     margin-top: .5rem;
     border: solid 0.2rem #8473ff;
     padding: 0.5rem;
   }
-  .P32-label{
+  .P42-label{
     font-size: 1.8rem;
     align-self: center;
     padding-left: 1rem;

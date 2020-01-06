@@ -1,22 +1,21 @@
 import React, { Component } from "react";
-import "./P31.css";
+import "./P42.css";
 import continuar from "../assets/gif0.gif";
 import seleccionar from "../assets/Seleccionar.png";
 import square from "../assets/square.PNG";
 import squareFull from "../assets/square-full.png";
-import step3 from "../assets/step3.png";
+import step4 from "../assets/step4.png";
 import { Redirect } from "react-router";
 import UIfx from "uifx";
-import mp3File from '../assets/beep.wav';
+import mp3File from "../assets/beep.wav";
 
-class P31 extends  Component{
+class P42 extends Component{
     constructor(props) {
         super(props);
         this.state = {
-          P1: this.props.location.pathname.slice(5,6),
+          P1: this.props.location.pathname.slice(5, 6),
           P2: this.props.location.pathname.slice(7),
-          toP41: false,
-          toP411: false,
+          toP42: false,
           isSelected: false,
           isSelectedQ: [false, false, false, false],
           questionsHover: [true, false, false, false],
@@ -34,17 +33,11 @@ class P31 extends  Component{
           console.log("Right arrow", this.state.isSelected);
           if (this.state.isSelected === true) {
             console.log("Right arrow plus selected");
-            console.log(this.props.location.pathname.slice(4))
-            console.log("this.state.toP31",this.state.toP31);
-            if (this.state.actualHover !== 4) {
-              this.setState(() => ({
-                toP41: true
+            console.log(this.props.location.pathname.slice(4));
+            console.log("this.state.toP42", this.state.toP42);
+            this.setState(() => ({
+                toP42: true
               }));
-            } else if (this.state.actualHover === 4) {
-              this.setState(() => ({
-                toP411: true
-              }));
-            }
           }
           let updIsSelectedQ = this.state.isSelectedQ;
           updIsSelectedQ[this.state.actualHover] = true;
@@ -107,119 +100,101 @@ class P31 extends  Component{
       }
       render() {
         /* console.log(this.props.location.pathname.slice(4)) */
-        if (this.state.toP41 === true) {
+        if (this.state.toP42 === true) {
           return (
             <Redirect
               to={
-                "/P41/" +
+                "/P42/" +
                 this.state.P1 +
-                "," + this.state.P2 + "," +
-                this.state.actualHover
-              }
-            />
-          );
-        }
-        if (this.state.toP411 === true) {
-          return (
-            <Redirect
-              to={
-                "/P411/" +
-                this.state.P1 +
-                "," + this.state.P2 + "," +
+                "," +
+                this.state.P2 +
+                "," +
                 this.state.actualHover
               }
             />
           );
         }
         return (
-          <div className="P31">
-            <div className="P31-text">
-              <img src={step3} alt="Paso 2" className="P31-step" />
-              <h1 className="P31-h1"> <label className="P31-bigger">Cuando transitas por el espacio público</label> ¿Te silban, te tiran besos, te dicen piropos, te persiguen o te bloquean el paso?</h1>
+          <div className="P42">
+            <div className="P42-text">
+              <img src={step4} alt="Paso 2" className="P42-step" />
+              <h1 className="P42-h1">
+              Cuando a una mujer le silban, le tiran besos, le dicen piropos, la persiguen o le bloquean el paso, mientras transita por el espacio público 
+                {" "}
+                <label className="P42-bigger">
+                ¿Qué sueles hacer?
+                </label>{" "}
+                
+              </h1>
     
-              <div className="P31-questions-container">
+              <div className="P42-questions-container">
                 <div
                   className={
                     this.state.questionsHover[0]
-                      ? "P31-question-hover"
-                      : "P31-question"
+                      ? "P42-question-hover"
+                      : "P42-question"
                   }
                 >
                   <img
                     src={this.state.isSelectedQ[0] ? squareFull : square}
                     alt=""
                   />
-                  <label className="P31-label">Si, todos los días</label>
+                  <label className="P42-label">También le digo un piropo</label>
                 </div>
     
                 <div
                   className={
                     this.state.questionsHover[1]
-                      ? "P31-question-hover"
-                      : "P31-question"
+                      ? "P42-question-hover"
+                      : "P42-question"
                   }
                 >
                   <img
                     src={this.state.isSelectedQ[1] ? squareFull : square}
                     alt=""
                   />
-                  <label className="P31-label">Si, cada dos o tres días</label>
+                  <label className="P42-label">Me da risa</label>
                 </div>
     
                 <div
                   className={
                     this.state.questionsHover[2]
-                      ? "P31-question-hover"
-                      : "P31-question"
+                      ? "P42-question-hover"
+                      : "P42-question"
                   }
                 >
                   <img
                     src={this.state.isSelectedQ[2] ? squareFull : square}
                     alt=""
                   />
-                  <label className="P31-label">Si, una vez por semana</label>
+                  <label className="P42-label">Me quedo callado, el tema no es conmigo</label>
                 </div>
     
                 <div
                   className={
                     this.state.questionsHover[3]
-                      ? "P31-question-hover"
-                      : "P31-question"
+                      ? "P42-question-hover"
+                      : "P42-question"
                   }
                 >
                   <img
                     src={this.state.isSelectedQ[3] ? squareFull : square}
                     alt=""
                   />
-                  <label className="P31-label">Si, rara vez</label>
+                  <label className="P42-label">Intervengo y exijo respeto para esa mujer</label>
                 </div>
     
-                <div
-                  className={
-                    this.state.questionsHover[4]
-                      ? "P31-question-hover"
-                      : "P31-question"
-                  }
-                >
-                  <img
-                    src={this.state.isSelectedQ[4] ? squareFull : square}
-                    alt=""
-                  />
-                  <label className="P31-label">No, nunca me ha pasado</label>
-                </div>
-    
-               
               </div>
             </div>
     
             {this.state.isSelected ? (
-              <img src={continuar} alt="continuar..." className="P31-img" />
+              <img src={continuar} alt="continuar..." className="P42-img" />
             ) : (
-              <img src={seleccionar} alt="continuar..." className="P31-img" />
+              <img src={seleccionar} alt="continuar..." className="P42-img" />
             )}
           </div>
         );
       }
 }
 
-export default P31;
+export default P42;
