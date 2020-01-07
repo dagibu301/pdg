@@ -22,12 +22,37 @@ class Final extends Component {
     console.log("this.state.P2: ", this.state.P2);
     console.log("this.state.P3: ", this.state.P3);
     console.log("this.state.P4: ", this.state.P4);
-    console.log("Pregunta test: ", preguntas[0].respuestas[this.state.P1])
+/*     console.log("Pregunta test: ", preguntas[0].respuestas[this.state.P1])
+    console.log("Pregunta test: ", preguntas[1].respuestas[this.state.P2])
+    console.log("Pregunta test: ", preguntas[2].respuestas[this.state.P3])
+    console.log("Pregunta test: ", preguntas[3].respuestas[this.state.P3])
+    console.log("Pregunta test: ", preguntas[4].respuestas[this.state.P4])
+    console.log("Pregunta test: ", preguntas[5].respuestas[this.state.P4])
+    console.log("Pregunta test: ", preguntas[6].respuestas[this.state.P4]) */
   }
 
   generateTxt(p1,p2,p3,p4){
+    let resultado = [];
+    if(p1 === '0' || p1 === '2'){
+      resultado.push("[{ P1:'" + preguntas[0].enunciado + "', R1:'" + preguntas[0].respuestas[p1] + "'}");
+      resultado.push("{ P2:'" + preguntas[1].enunciado + "', R2:'" + preguntas[1].respuestas[p2] + "'}");
+      resultado.push("{ P3:'" + preguntas[2].enunciado + "', R3:'" + preguntas[2].respuestas[p3] + "'}");
+      if (p3 !== '4') {
+        resultado.push("{ P4:'" + preguntas[4].enunciado + "', R4:'" + preguntas[4].respuestas[p4] + "'}]");
+      } else  if(p3 === '4'){
+        resultado.push("{ P4:'" + preguntas[6].enunciado + "', R4:'" + preguntas[6].respuestas[p4] + "'}]");
+      }
+
+    } else
+    
+    if(p1 === '1' || p1 === '3'){
+      resultado.push("[{ P1:'" + preguntas[0].enunciado + "', R1:'" + preguntas[0].respuestas[p1] + "'}");
+      resultado.push("{ P2:'" + preguntas[1].enunciado + "', R2:'" + preguntas[1].respuestas[p2] + "'}");
+      resultado.push("{ P3:'" + preguntas[3].enunciado + "', R3:'" + preguntas[3].respuestas[p3] + "'}");
+      resultado.push("{ P4:'" + preguntas[5].enunciado + "', R4:'" + preguntas[5].respuestas[p4] + "'}]");
+    }
     const element = document.createElement("a");
-    const file = new Blob([p1], {type: 'text/plain'});
+    const file = new Blob([resultado], {type: 'text/plain'});
     element.href = URL.createObjectURL(file);
     let docName = Math.floor(Math.random() * 100000000);
     element.download = docName + ".txt";
