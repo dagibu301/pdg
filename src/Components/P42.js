@@ -80,7 +80,7 @@ class P42 extends Component{
               isSelected: false,
               isSelectedQ: [false, false, false, false]
             }));
-            console.log("Actual", this.state.actualHover);
+
             let updQuestionsHover = this.state.questionsHover;
             updQuestionsHover[this.state.actualHover + 1] = false;
             updQuestionsHover[this.state.actualHover] = true;
@@ -103,7 +103,7 @@ class P42 extends Component{
         document.removeEventListener("keydown", this.upFunction, false);
       }
       render() {
-        /* console.log(this.props.location.pathname.slice(4)) */
+  
         if (this.state.toFinal === true) {
           return (
             <Redirect
