@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Final.css";
-import continuar from "../assets/gif0.gif";
-import { Redirect, matchPath } from "react-router";
+import terminar from "../assets/Terminar.gif";
+import { Redirect } from "react-router";
 import UIfx from "uifx";
 import mp3File from "../assets/beep.wav";
 import preguntas from "./Preguntas"
@@ -22,13 +22,6 @@ class Final extends Component {
     console.log("this.state.P2: ", this.state.P2);
     console.log("this.state.P3: ", this.state.P3);
     console.log("this.state.P4: ", this.state.P4);
-/*     console.log("Pregunta test: ", preguntas[0].respuestas[this.state.P1])
-    console.log("Pregunta test: ", preguntas[1].respuestas[this.state.P2])
-    console.log("Pregunta test: ", preguntas[2].respuestas[this.state.P3])
-    console.log("Pregunta test: ", preguntas[3].respuestas[this.state.P3])
-    console.log("Pregunta test: ", preguntas[4].respuestas[this.state.P4])
-    console.log("Pregunta test: ", preguntas[5].respuestas[this.state.P4])
-    console.log("Pregunta test: ", preguntas[6].respuestas[this.state.P4]) */
   }
 
   generateTxt(p1,p2,p3,p4){
@@ -99,7 +92,7 @@ class Final extends Component {
           </p>
         </div>
 
-        <img src={continuar} alt="continuar..." className="Final-img" />
+        <img src={terminar} alt="terminar..." className="Final-img" />
       </div>
     );
   }
