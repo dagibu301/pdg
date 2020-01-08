@@ -68,7 +68,7 @@ class P2 extends Component {
           isSelected: false,
           isSelectedQ: [false, false, false, false]
         }));
-        console.log("Actual", this.state.actualHover);
+
         let updQuestionsHover = this.state.questionsHover;
         updQuestionsHover[this.state.actualHover - 1] = false;
         updQuestionsHover[this.state.actualHover] = true;
