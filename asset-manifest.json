@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pdg/static/css/main.b1b8898b.chunk.css",
+    "main.css": "/pdg/static/css/main.6c774b51.chunk.css",
     "main.js": "/pdg/static/js/main.95fd9d33.chunk.js",
     "main.js.map": "/pdg/static/js/main.95fd9d33.chunk.js.map",
     "runtime-main.js": "/pdg/static/js/runtime-main.1d9b6dac.js",
@@ -8,9 +8,9 @@
     "static/js/2.9d2fc6c2.chunk.js": "/pdg/static/js/2.9d2fc6c2.chunk.js",
     "static/js/2.9d2fc6c2.chunk.js.map": "/pdg/static/js/2.9d2fc6c2.chunk.js.map",
     "index.html": "/pdg/index.html",
-    "precache-manifest.eb469a3af873e856775f83e3ccc631b3.js": "/pdg/precache-manifest.eb469a3af873e856775f83e3ccc631b3.js",
+    "precache-manifest.ccf637b1a56e05aa96e78557d91f4b15.js": "/pdg/precache-manifest.ccf637b1a56e05aa96e78557d91f4b15.js",
     "service-worker.js": "/pdg/service-worker.js",
-    "static/css/main.b1b8898b.chunk.css.map": "/pdg/static/css/main.b1b8898b.chunk.css.map",
+    "static/css/main.6c774b51.chunk.css.map": "/pdg/static/css/main.6c774b51.chunk.css.map",
     "static/media/Final.css": "/pdg/static/media/Roboto-Regular.11eabca2.ttf",
     "static/media/beep.wav": "/pdg/static/media/beep.1068a0ce.wav",
     "static/media/square.PNG": "/pdg/static/media/square.dbd6960a.PNG",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.1d9b6dac.js",
     "static/js/2.9d2fc6c2.chunk.js",
-    "static/css/main.b1b8898b.chunk.css",
+    "static/css/main.6c774b51.chunk.css",
     "static/js/main.95fd9d33.chunk.js"
   ]
 }
